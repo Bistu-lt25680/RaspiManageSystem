@@ -1,0 +1,106 @@
+# vue-manage-system-master -> src/main.ts
+
+- .github/
+  - FUNDING.yml
+- .gitignore
+- auto-imports.d.ts
+- components.d.ts
+- index.html
+- LICENSE
+- package-lock.json
+- package.json
+- public/
+  - mock/
+    - role.json
+    - table.json
+    - user.json
+  - template.xlsx
+- README.md
+- README_EN.md
+- screenshots/
+  - wms1.png
+  - wms3.png
+- src/
+  - api/
+    - index.ts
+  - App.vue # 主页面,RouterView路由 -> ./router/index.ts
+  - assets/
+    - css/
+      - icon.css
+      - main.css
+    - img/
+      - img.jpg
+      - login-bg.jpg
+      - logo.svg
+      - ucenter-bg.jpg
+  - components/ # 组件
+    - countup.vue
+    - header.vue
+    - menu.ts # 侧边栏加载的菜单 每个菜单都要在../store/permiss.ts中注册 -> ./store/permiss.ts
+    - sidebar.vue # 侧边栏 -> ./menu.ts
+    - table-custom.vue
+    - table-detail.vue
+    - table-edit.vue
+    - table-search.vue
+    - tabs.vue
+  - main.ts # 入口文件 -> ./App.vue
+  - router/
+    - index.ts # 路由配置 默认是home/dashboard 有home的子页面 -> ../views/home.vue
+  - store/
+    - permiss.ts
+    - sidebar.ts 
+    - tabs.ts
+    - theme.ts
+  - types/
+    - form-option.ts
+    - menu.ts
+    - role.ts
+    - table.ts
+    - user.ts
+  - utils/
+    - china.ts
+    - index.ts
+    - request.ts
+  - views/
+    - chart/
+      - echarts.vue
+      - options.ts
+      - schart.vue
+    - dashboard.vue
+    - element/
+      - calendar.vue
+      - carousel.vue
+      - form.vue
+      - statistic.vue
+      - steps.vue
+      - tabs.vue
+      - tour.vue
+      - upload.vue
+      - watermark.vue
+    - home.vue # 主页面 加载了header和sidebar 剩下的content加载路由的其他页面 这些页面都是home的子页面 -> ./router/index.ts
+    - pages/
+      - 403.vue
+      - 404.vue
+      - editor.vue
+      - icon.vue
+      - login.vue
+      - markdown.vue
+      - register.vue
+      - reset-pwd.vue
+      - theme.vue
+      - ucenter.vue
+    - system/
+      - menu.vue
+      - role-permission.vue
+      - role.vue
+      - user.vue
+    - table/
+      - basetable.vue
+      - export.vue
+      - import.vue
+      - table-editor.vue
+  - vite-env.d.ts
+- tsconfig.json
+- tsconfig.node.json
+- vite.config.ts
+- yarn.lock

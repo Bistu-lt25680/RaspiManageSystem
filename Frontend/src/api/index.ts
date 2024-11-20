@@ -1,5 +1,7 @@
+import axios from 'axios';
 import request from '../utils/request';
 import { ref } from 'vue';
+import { url, testurl } from './url';
 export const fetchData = () => {
     return request({
         url: './mock/table.json',
@@ -49,7 +51,6 @@ function timestampToTime(timestamp: number): TimeData {
     if (timestamp.toString().length === 10) {
         timestamp = timestamp * 1000;
     }
-    
     const date = new Date(timestamp);
     return {
         year: date.getFullYear().toString(),
@@ -63,7 +64,7 @@ function timestampToTime(timestamp: number): TimeData {
 let responsetocheck;
 export const fetchMessageFromDjango = () => {
     return request({
-        url: 'http://127.0.0.1:8000/api/dht11datas/',
+        url: `${testurl}/api/dht11datas`,
         method: 'get'
     }).then(response => {
         responsetocheck = response.data;
@@ -74,6 +75,38 @@ export const fetchMessageFromDjango = () => {
         };
         // console.log(response.data);
     });
+};
+
+export const sendImageForRecognition = async (imageData: string) => {
+    try {
+        const response = await axios({
+            method: 'post',
+            url: `${testurl}/api/face-recognition`,
+            data: {
+                image: imageData
+            },
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            // 添加额外的 axios 配置
+            timeout: 10000,  // 10秒超时
+            withCredentials: true,  // 支持跨域 cookie
+        });
+
+        return response.data;
+    } catch (error) {
+        if (axios.isAxiosError(error)) {
+            console.error('Axios错误:', error.response?.data || error.message);
+            return {
+                success: false,
+                message: error.response?.data?.message || '请求失败'
+            };
+        }
+        return {
+            success: false,
+            message: '未知错误'
+        };
+    }
 };
 
 export { responsetocheck };

@@ -226,25 +226,28 @@ const routes: RouteRecordRaw[] = [
                 name: 'DHT11',
                 meta: {
                     title: '温湿度监控',
+                    permiss: '81'
                 },
                 component: () => import(/* webpackChunkName: "DHT11" */ '../views/function/DHT11.vue'),
             },
-            // {
-            //     path: '/VideoSurveillance',
-            //     name: 'VideoSurveillance',
-            //     meta: {
-            //         title: '视频监控',
-            //     },
-            //     component: () => import(/* webpackChunkName: "VideoSurveillance" */ '../views/function/VideoSurveillance.vue'),
-            // },
-            // {
-            //     path: '/FaceRecognition',
-            //     name: 'FaceRecognition',
-            //     meta: {
-            //         title: '人脸识别',
-            //     },
-            //     component: () => import(/* webpackChunkName: "FaceRecognition" */ '../views/function/FaceRecognition.vue'),
-            // },
+            {
+                path: '/VideoSurveillance',
+                name: 'VideoSurveillance',
+                meta: {
+                    title: '视频监控',
+                    permiss: '82'
+                },
+                component: () => import(/* webpackChunkName: "VideoSurveillance" */ '../views/function/VideoSurveillance.vue'),
+            },
+            {
+                path: '/FaceRecognition',
+                name: 'FaceRecognition',
+                meta: {
+                    title: '人脸识别',
+                    permiss: '83'
+                },
+                component: () => import(/* webpackChunkName: "FaceRecognition" */ '../views/function/FaceRecognition.vue'),
+            },
         ],
     },
     {

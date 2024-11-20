@@ -54,13 +54,13 @@ export const menuData: Menus[] = [
             {
                 id: '82',
                 pid: '8',
-                index: '/MQTT',
+                index: '/VideoSurveillance',
                 title: '视频监控',
             },
             {
                 id: '83',
                 pid: '8',
-                index: '/MQTT',
+                index: '/FaceRecognition',
                 title: '人脸识别',
             },
         ],

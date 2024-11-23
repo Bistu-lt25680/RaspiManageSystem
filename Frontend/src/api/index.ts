@@ -1,7 +1,7 @@
 import axios from 'axios';
 import request from '../utils/request';
 import { ref } from 'vue';
-import { url, testurl } from './url';
+import { testurl } from '../../../url';
 export const fetchData = () => {
     return request({
         url: './mock/table.json',
@@ -45,6 +45,18 @@ export const DHT11Data = ref({
     } as TimeData
 });
 
+export const DistanceData = ref({
+    distance: 0,
+    time: {
+        year: '',
+        month: '',
+        day: '',
+        hour: '',
+        minute: '',
+        second: ''
+    } as TimeData
+});
+
 // 时间戳转换函数
 function timestampToTime(timestamp: number): TimeData {
     // 如果时间戳是秒级的（10位数），需要转换为毫秒
@@ -73,7 +85,18 @@ export const fetchMessageFromDjango = () => {
             humidity: response.data.humidity,
             time: timestampToTime(response.data.timestamp)
         };
-        // console.log(response.data);
+    });
+};
+
+export const fetchDistanceFromDjango = () => {
+    return request({
+        url: `${testurl}/api/distance`,
+        method: 'get'
+    }).then(response => {
+        DistanceData.value = {
+            distance: response.data.distance,
+            time: timestampToTime(response.data.timestamp)
+        };
     });
 };
 

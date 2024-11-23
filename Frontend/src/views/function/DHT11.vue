@@ -100,11 +100,11 @@
     updateLineOptions();
   });
 
-  // 然后再开始定时更新
+  // 修改更新间隔为1秒
   let interval = setInterval(() => {
     fetchMessageFromDjango();
     updateLineOptions();
-  }, 2000);
+  }, 2000);  // 从2000改为1000，实现每秒更新一次
 
   onUnmounted(() => {
     if (interval) {

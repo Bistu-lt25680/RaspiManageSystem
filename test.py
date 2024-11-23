@@ -2,7 +2,7 @@ import time
 import requests
 import random  # 添加随机数，模拟真实数据波动
 
-server_url = "http://8.210.22.253:8000/api/dht11-data/"
+server_url = "http://101.43.131.207:8000/api/dht11-data/"
 test_url = "http://localhost:3000/api/dht11datas/"
 
 while True:

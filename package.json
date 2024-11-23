@@ -1,6 +1,15 @@
 {
   "dependencies": {
     "@nestjs/mongoose": "^10.1.0",
-    "mongoose": "^8.8.1"
+    "@nestjs/platform-socket.io": "^10.4.8",
+    "@nestjs/platform-ws": "^10.4.8",
+    "@nestjs/websockets": "^10.4.8",
+    "axios": "^1.7.7",
+    "canvas2image-2": "^2.3.0",
+    "html2canvas": "^1.4.1",
+    "mongoose": "^8.8.1",
+    "socket.io": "^4.8.1",
+    "websocket": "^1.0.35",
+    "websockets": "^0.2.0"
   }
 }

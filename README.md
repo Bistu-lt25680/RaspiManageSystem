@@ -15,8 +15,8 @@
 5. Echarts
 
 ### 后端
-1. Django
-2. MySQL
+1. NestJS
+2. MongoDB
 
 ### 硬件
 1. Raspberry 400
